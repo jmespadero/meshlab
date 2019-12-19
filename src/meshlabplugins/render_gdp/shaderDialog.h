@@ -24,6 +24,7 @@
 #ifndef SHADERDIALOG_H
 #define SHADERDIALOG_H
 
+#include <QSignalMapper>
 #include <map>
 #include <GL/glew.h>
 #include <common/meshmodel.h>

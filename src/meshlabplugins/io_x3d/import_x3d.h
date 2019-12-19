@@ -83,6 +83,7 @@
 #include <vcg/complex/algorithms/update/position.h>
 #include <vcg/complex/append.h>
 #include <wrap/gl/glu_tesselator.h>
+#include <wrap/io_trimesh/additionalinfo.h>
 
 #include "util_x3d.h"
 #include "vrml/Parser.h"

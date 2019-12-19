@@ -31,7 +31,7 @@
 
 #include "ml_mesh_type.h"
 
-#include <vcg/complex/algorithms/update/bounding.h>
+//#include <vcg/complex/algorithms/update/bounding.h>
 #include <vcg/complex/algorithms/update/color.h>
 #include <vcg/complex/algorithms/update/flag.h>
 #include <vcg/complex/algorithms/update/normal.h>
@@ -40,22 +40,13 @@
 #include <vcg/complex/algorithms/update/selection.h>
 #include <vcg/complex/algorithms/update/topology.h>
 
-
-//#include <wrap/gl/trimesh.h>
-
-
-
-#include <wrap/callback.h>
 #include <wrap/io_trimesh/io_mask.h>
-#include <wrap/io_trimesh/additionalinfo.h>
 
 #include <QList>
-#include <QString>
 #include <QStringList>
 #include <QFileInfo>
 #include <QReadWriteLock>
 #include <QImage>
-#include <QAction>
 #include "GLLogStream.h"
 #include "filterscript.h"
 #include "ml_shared_data_context.h"

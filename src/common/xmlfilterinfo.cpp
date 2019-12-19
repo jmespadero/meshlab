@@ -4,8 +4,18 @@
 #include "mlexception.h"
 #include <assert.h>
 #include <QtXml>
+#include <QtXmlPatterns/QXmlSchema>
+#include <QtXmlPatterns/QXmlSchemaValidator>
+#include <QAction>
 
 #include "mlapplication.h"
+
+QString MeshLabXMLFilterContainer::filterName() const
+	{
+		if (act != nullptr)
+			return act->text();
+		return QString();
+	}
 
 MLXMLInfo::MLXMLInfo( const QString& file )
 :fileName(file),filevarname(inputDocName())

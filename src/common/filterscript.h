@@ -29,8 +29,6 @@
 #include <QPair>
 
 
-class QDomElement;
-
 class FilterNameParameterValuesPair
 {
 public:

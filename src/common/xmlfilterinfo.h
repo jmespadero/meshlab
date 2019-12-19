@@ -1,15 +1,10 @@
 #ifndef XML_FILTER_INFO_H
 #define XML_FILTER_INFO_H
 
-#include<QStringList>
-#include<QtXmlPatterns/QAbstractMessageHandler>
-#include <QtXmlPatterns/QXmlSchema>
-#include <QtXmlPatterns/QXmlSchemaValidator>
+#include <QString>
+#include <QtXmlPatterns/QAbstractMessageHandler>
 #include <QSettings>
-//#include <QtXmlPatterns/QXmlQuery>
-#include <QUrl>
-#include<QAction>
-#include<QBuffer>
+class QAction;
 
 class XMLMessageHandler : public QAbstractMessageHandler
 {
@@ -321,12 +316,7 @@ struct MeshLabXMLFilterContainer
 		return ((act != NULL) && (xmlInfo != NULL) && (filterInterface != NULL));
 	}
 
-	QString filterName() const
-	{
-		if (act != nullptr)
-			return act->text();
-		return QString();
-	}
+	QString filterName() const;
 
 	QString readPersistentValueFromSettings(const QString& varname) const
 	{

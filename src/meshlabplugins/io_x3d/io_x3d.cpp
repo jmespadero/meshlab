@@ -22,7 +22,7 @@
 ****************************************************************************/
 
 #include <QtXml>
-
+#include <wrap/io_trimesh/additionalinfo.h>
 #include "io_x3d.h"
 
 #include "import_x3d.h"

@@ -23,13 +23,6 @@
 
 #ifndef MESHLAB_FILTERPARAMETER_H
 #define MESHLAB_FILTERPARAMETER_H
-#include <QtCore>
-#include <QtXml>
-
-#include <QMap>
-#include<QString>
-#include <QPair>
-#include <QAction>
 #include <vcg/math/matrix44.h>
 #include <vcg/space/color4.h>
 #include <vcg/math/shot.h>
@@ -37,8 +30,11 @@
 
 #include "xmlfilterinfo.h"
 
+#include <QColor>
+#include <QDomDocument>
 class MeshModel;
 class MeshDocument;
+class QDomElement;
 
 //enum TypeId {BOOL,INT,FLOAT,STRING,MATRIX44F,POINT3F,COLOR,ENUM,MESH,GROUP,FILENAME};
 //
