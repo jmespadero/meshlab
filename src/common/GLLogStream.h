@@ -54,6 +54,12 @@ public:
 	void print(QStringList &list);		// Fills a QStringList with the log entries
 	void Save(int Level, const char *filename);
 	void Clear();
+
+	void Logf(int Level, const char * f)
+	{
+		Log(Level, f);
+	}
+
 	template <typename... Ts>
 	void Logf(int Level, const char * f, Ts&&... ts )
 	{
@@ -65,6 +71,7 @@ public:
 			Log(Level, "Log message truncated.");
 		}
 	}
+
 
 	void Log(int Level, const char * buf);
 
