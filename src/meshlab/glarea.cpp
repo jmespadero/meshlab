@@ -22,12 +22,8 @@
 ****************************************************************************/
 
 
-
-#include <common/interfaces.h>
-
 #include "glarea.h"
 #include "mainwindow.h"
-#include "multiViewer_Container.h"
 #include "ml_default_decorators.h"
 
 #include <QFileDialog>
@@ -42,8 +38,6 @@
 #include <wrap/qt/gl_label.h>
 #include <wrap/io_trimesh/export_ply.h>
 #include <wrap/io_trimesh/import_ply.h>
-#include<QOpenGLContext>
-
 
 using namespace std;
 using namespace vcg;
@@ -132,7 +126,9 @@ GLArea::~GLArea()
 /*
 This member returns the information of the Mesh in terms of VC,VQ,FC,FQ,WT
 where:
-VC = VertColor,VQ = VertQuality,FC = FaceColor,FQ = FaceQuality,WT = WedgTexCoord
+VC = VertColor, VQ = VertQuality, VT = VertTexCoord, VR = VertRadius,
+FC = FaceColor, FQ = FaceQuality, WT = WedgTexCoord, MP = Polygonal (not triangles)
+MC = Camera
 */
 QString GLArea::GetMeshInfoString()
 {
@@ -1987,7 +1983,7 @@ void GLArea::initializeShot(Shotm &shot)
 
 bool GLArea::viewFromFile()
 {
-    QString filename = QFileDialog::getOpenFileName(this, tr("Load Project"), "./", tr("Xml Files (*.xml)"));
+    QString filename = QFileDialog::getOpenFileName(this, tr("Load XML Camera Settings"), "./", tr("Xml Files (*.xml)"));
 
     QFile qf(filename);
     QFileInfo qfInfo(filename);
@@ -1999,18 +1995,26 @@ bool GLArea::viewFromFile()
 
     QDomDocument doc("XmlDocument");    //It represents the XML document
     if(!doc.setContent( &qf ))
+    {
+        qf.close();
         return false;
+    }
 
     QString type = doc.doctype().name();
 
     //TextAlign file project
-    if(type == "RegProjectML")   loadShotFromTextAlignFile(doc);
+    if(type == "RegProjectML")   
+        loadShotFromTextAlignFile(doc);
     //View State file
-    else if(type == "ViewState") loadViewFromViewStateFile(doc);
-
-    qDebug("End file reading");
+    else if(type == "ViewState") 
+        loadViewFromViewStateFile(doc);
+    else
+    {
     qf.close();
+        return false;
+    }
 
+    qf.close();
     return true;
 }
 
@@ -2093,7 +2097,7 @@ void GLArea::loadViewFromViewStateFile(const QDomDocument &doc)
             trackball.track.sca = attr.namedItem("TrackScale").nodeValue().section(' ',0,0).toFloat();
             nearPlane = attr.namedItem("NearPlane").nodeValue().section(' ',0,0).toFloat();
             farPlane = attr.namedItem("FarPlane").nodeValue().section(' ',0,0).toFloat();
-			fov = (shot.Intrinsics.cameraType == 0) ? shot.GetFovFromFocal() : 5.0;
+            fov = (shot.Intrinsics.cameraType == 0) ? shot.GetFovFromFocal() : 5.0;
             clipRatioNear = nearPlane/getCameraDistance();
             clipRatioFar = farPlane/getCameraDistance();
         }
