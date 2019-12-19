@@ -1,3 +1,7 @@
+#include <QSplitter>
+#include <QFileDialog>
+#include <QMessageBox>
+
 #include "../common/meshmodel.h"
 #include "../common/interfaces.h"
 #include "../common/mlexception.h"
@@ -9,8 +13,6 @@
 //#include "ui_paramgui.h"
 //#include "ui_filtereditorframe.h"
 #include "xmlgeneratorgui.h"
-#include <QSplitter>
-#include <QFileDialog>
 
 ParamGeneratorGUI::ParamGeneratorGUI(QWidget* parent /*= NULL*/ )
 :QFrame(parent),parentitem(NULL),currentname()

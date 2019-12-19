@@ -16,6 +16,7 @@
 #include<QDockWidget>
 #include<QTextEdit>
 #include<QLabel>
+#include<QDialog>
 #include "qstyleoption.h"
 #include "additionalgui.h"
 

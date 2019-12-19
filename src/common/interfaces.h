@@ -32,11 +32,10 @@
 #include "xmlfilterinfo.h"
 
 #include <QtCore>
-#include <QApplication>
 #include <QAction>
 #include <QGLContext>
 #include <QGLFormat>
-#include <QMessageBox>
+//#include <QMessageBox>
 #include <QTabletEvent>
 #include <QDebug>
 

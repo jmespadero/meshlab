@@ -21,6 +21,7 @@
  *                                                                           *
  ****************************************************************************/
 
+#include <QApplication>
 #include "edit_select.h"
 #include <wrap/gl/pick.h>
 #include <wrap/qt/device_to_logical.h>
@@ -163,7 +164,7 @@ void EditSelectPlugin::doSelection(MeshModel &m, GLArea *gla, int mode)
   bufQImg.fill(Qt::white);
   QPainter bufQPainter(&bufQImg);
   vector<QPointF> qpoints;
-  for(int i=0;i<selPolyLine.size();++i)
+  for(unsigned i=0;i<selPolyLine.size();++i)
     qpoints.push_back(QPointF(selPolyLine[i][0],selPolyLine[i][1]));    
   bufQPainter.setBrush(QBrush(Qt::black));
   bufQPainter.drawPolygon(&qpoints[0],qpoints.size(), Qt::WindingFill); 
@@ -382,7 +383,7 @@ void EditSelectPlugin::DrawXORPolyLine(GLArea * gla)
 	else
 	{
 		glBegin(GL_LINE_LOOP);
-		for (int ii = 0; ii < selPolyLine.size(); ii++)
+		for (unsigned ii = 0; ii < selPolyLine.size(); ii++)
 			glVertex(selPolyLine[ii]);
 	}
 	glEnd();

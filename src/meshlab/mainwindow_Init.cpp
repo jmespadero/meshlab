@@ -40,6 +40,7 @@
 #include <QStatusBar>
 #include <QMenuBar>
 #include <QWidgetAction>
+#include <QMessageBox>
 #include "mainwindow.h"
 #include "plugindialog.h"
 #include "customDialog.h"

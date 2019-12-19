@@ -23,7 +23,6 @@
 #ifndef MESHLAB_STDPARDIALOG_H
 #define MESHLAB_STDPARDIALOG_H
 
-#include "../common/interfaces.h"
 #include<QCheckBox>
 #include<QRadioButton>
 #include<QSpinBox>
@@ -31,6 +30,9 @@
 #include<QComboBox>
 #include<QGridLayout>
 #include<QDockWidget>
+#include<QDialog>
+class QLabel;
+#include "../common/interfaces.h"
 
 class MeshLabWidget : public QWidget
 {

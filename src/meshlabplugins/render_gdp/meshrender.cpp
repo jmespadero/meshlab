@@ -21,9 +21,9 @@
 *                                                                           *
 ****************************************************************************/
 
-#include <math.h>
-#include <stdlib.h>
-
+#include <cmath>
+#include <cstdlib>
+#include <QMessageBox>
 #include "meshrender.h"
 #include <QGLWidget>
 #include <QTextStream>
@@ -248,7 +248,7 @@ void MeshShaderRenderPlugin::initActionList() {
 	}
 }
 
-void MeshShaderRenderPlugin::Init(QAction *a, MeshDocument &md, MLSceneGLSharedDataContext::PerMeshRenderingDataMap& mp, GLArea *gla)
+void MeshShaderRenderPlugin::Init(QAction *a, MeshDocument &/*md*/, MLSceneGLSharedDataContext::PerMeshRenderingDataMap& /*mp*/, GLArea *gla)
 {
 	if (sDialog) {
 		sDialog->close();

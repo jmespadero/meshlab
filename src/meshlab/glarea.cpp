@@ -33,6 +33,7 @@
 #include <QFileDialog>
 #include <QClipboard>
 #include <QLocale>
+#include <QApplication>
 
 #include <wrap/gl/picking.h>
 #include <wrap/qt/trackball.h>

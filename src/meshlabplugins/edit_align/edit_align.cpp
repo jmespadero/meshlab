@@ -25,6 +25,7 @@ History
 $Log: meshedit.cpp,v $
 ****************************************************************************/
 
+#include <QMessageBox>
 #include "edit_align.h"
 #include <meshlab/glarea.h>
 #include <meshlab/stdpardialog.h>

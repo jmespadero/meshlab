@@ -33,6 +33,7 @@
 #include <wrap/io_trimesh/io_mask.h>
 
 #include <QMessageBox>
+#include <QApplication>
 using namespace std;
 using namespace vcg;
 

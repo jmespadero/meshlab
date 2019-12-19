@@ -42,8 +42,7 @@
 #include <QMenuBar>
 #include <QProgressBar>
 #include <QDesktopServices>
-
-
+#include <QMessageBox>
 
 #include "../common/scriptinterface.h"
 #include "../common/meshlabdocumentxml.h"

@@ -20,7 +20,7 @@
 * for more details.                                                         *
 *                                                                           *
 ****************************************************************************/
-
+#include <QMessageBox>
 #include "qualitymapperdialog.h"
 #include <limits>
 #include <QPen>

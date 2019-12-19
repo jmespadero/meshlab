@@ -67,12 +67,13 @@ class FilterScript : public QObject
 public:
 	FilterScript();
 	~FilterScript();
-	bool open(QString filename);
-	bool save(QString filename);
-	QDomDocument xmlDoc();
+	bool open(const QString &filename);
+	bool save(const QString &filename) const;
+	QDomDocument xmlDoc() const;
 
 	QList< FilterNameParameterValuesPair* > filtparlist;
 	typedef QList< FilterNameParameterValuesPair* >::iterator iterator;
+	typedef QList< FilterNameParameterValuesPair* >::const_iterator const_iterator;
 
 public slots:
 	void addExecutedXMLFilter(const QString& name, const QMap<QString, QString>& parvalue);

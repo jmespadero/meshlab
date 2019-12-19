@@ -22,7 +22,6 @@
 ****************************************************************************/
 
 
-#include "stdpardialog.h"
 
 #include <QLabel>
 #include <QPushButton>
@@ -32,7 +31,9 @@
 #include <QClipboard>
 #include <QColorDialog>
 #include <QToolBar>
+#include <QApplication>
 #include "mainwindow.h"
+#include "stdpardialog.h"
 
 
 using namespace vcg;

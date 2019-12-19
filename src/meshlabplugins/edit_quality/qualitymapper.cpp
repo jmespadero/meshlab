@@ -27,6 +27,7 @@ FIRST RELEASE
 
 ****************************************************************************/
 
+#include <QMessageBox>
 #include <limits>
 #include <meshlab/glarea.h>
 #include "qualitymapper.h"

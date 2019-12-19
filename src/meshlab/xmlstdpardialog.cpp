@@ -1,8 +1,8 @@
-#include "xmlstdpardialog.h"
 #include <climits>
 #include <QColorDialog>
 #include <QFileDialog>
 #include <QDialogButtonBox>
+#include "xmlstdpardialog.h"
 #include "mainwindow.h"
 
 static void updateRenderingData(GLArea* glarea, MeshModel* curmodel)
@@ -16,7 +16,7 @@ static void updateRenderingData(GLArea* glarea, MeshModel* curmodel)
 }
 
 MeshLabXMLStdDialog::MeshLabXMLStdDialog(QWidget *p)
-    :QDockWidget(QString("Plugin"), p),isfilterexecuting(false),env(),showHelp(false),previewCB(NULL)
+    :QDockWidget(QString("Plugin"), p),isfilterexecuting(false),env(),previewCB(NULL),showHelp(false)
 {
     curmask = 0;
     qf = NULL;
